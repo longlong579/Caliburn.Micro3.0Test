@@ -1,0 +1,39 @@
+﻿<Window x:Class="Illusion.Demo.Views.OptionsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:fs="www.Caliburn.com/2011/Framework"                 
+        xmlns:fi="www.Illusion.com/2011/Framework"   
+        Title="{StringResource DIALOG_OPTION}"
+        SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+    <Border MinWidth="500">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" MinHeight="20"/>
+                <RowDefinition Height="16" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="20"/>
+                    <ColumnDefinition Width="12" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ListBox Name="optionsPageList" VerticalAlignment="Stretch" MinWidth="110" Grid.Row="0" Grid.Column="0" 
+                         IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding Path=Pages}" SelectedItem="{Binding Path=ActivePage}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=DisplayName}" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <ContentControl Name="contentArea" Grid.Row="0" Grid.Column="2" Focusable="false" fs:View.Model="{Binding Path=ActivePage}">
+                </ContentControl>
+            </Grid>
+            <UniformGrid Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Rows="1" Margin="0,6,10,6">
+                <Button x:Name="Commit" IsDefault="true" Content="{StringResource BUTTON_OK}"></Button>
+                <Button x:Name="Cancel" IsCancel="true" Content="{StringResource BUTTON_CANCEL}"></Button>
+            </UniformGrid>
+        </Grid>
+    </Border>
+
+</Window>

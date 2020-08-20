@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="Illusion.Demo.Views.ToolBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fs="www.Caliburn.com/2011/Framework"                 
+             xmlns:fI="www.Illusion.com/2011/Framework"                        
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key ="BooleanToVisibilityConverter"/>
+        <fI:GenericBindingConverter x:Key ="GenericBindingConverter"/>
+
+        <DataTemplate DataType="{x:Type fI:MenuToolPart}">
+            <Button Style="{DynamicResource {x:Static ToolBar.ButtonStyleKey}}" 
+                    ToolTip="{Binding Path=DisplayName}"
+                    fs:Message.Attach="[Event Click] = [Action Execute()]"
+                    Visibility="{Binding Path=IsVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    Content="{ImageBinding Path=Icon}">
+            </Button>
+        </DataTemplate>
+        <Style TargetType="ToolBar">
+            <!--<Setter Property="Header" Value="{StringBinding Name}" />-->
+            <Setter Property="ItemsSource" Value="{Binding RelativeSource={RelativeSource Self}, Path=DataContext, Converter={StaticResource GenericBindingConverter}, ConverterParameter=IObservableParent&lt;IToolBarPart&gt;.Items}" />
+            <Setter Property="IsEnabled" Value="{Binding CanExecute}" />
+            <Setter Property="Visibility" Value="{Binding IsVisible, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <Setter Property="Behavior.AutoMergeStyle" Value="True" />
+            <Setter Property="fs:Message.Attach" Value="[Event Click] = [Action Execute()]" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <fI:BindableToolBarTray x:Name="tbtToolBar" ItemsSource="{Binding Path=Items}">
+        </fI:BindableToolBarTray>
+    </Grid>
+</UserControl>

@@ -1,0 +1,21 @@
+<DockingManager version="1.3.0">
+    <ResizingPanel ResizeWidth="*" ResizeHeight="*" EffectiveSize="0,0" Orientation="Vertical">
+        <ResizingPanel ResizeWidth="*" ResizeHeight="*" EffectiveSize="985.6,369.4" Orientation="Horizontal">
+            <DockablePane ResizeWidth="200" ResizeHeight="*" EffectiveSize="200,369.4" ID="f1c1404d-5f07-4a34-8c6b-6b9b55accf66" Anchor="Left" IsAutoHidden="false">
+                <DockableContent Name="SCREEN_COMPONENT" FloatingWindowSize="250,400" />
+            </DockablePane>
+            <DocumentPane IsMain="true" ResizeWidth="*" ResizeHeight="*" EffectiveSize="573.6,369.4">
+                <DocumentContent Name="SCREEN_DESIGNER" />
+            </DocumentPane>
+            <DockablePane ResizeWidth="200" ResizeHeight="*" EffectiveSize="200,369.4" ID="86f04d3b-8c3b-4335-b6c4-df09e99aa6ae" Anchor="Right" IsAutoHidden="false">
+                <DockableContent Name="SCREEN_PROJECT" FloatingWindowSize="250,400" />
+            </DockablePane>
+        </ResizingPanel>
+        <DockablePane ResizeWidth="*" ResizeHeight="200" EffectiveSize="985.6,200" ID="2cbb0bd6-08ce-4b65-9618-594d067fed6f" Anchor="Bottom" SelectedIndex="0" IsAutoHidden="false">
+            <DockableContent Name="SCREEN_FINDRESULT" FloatingWindowSize="250,400" />
+            <DockableContent Name="SCREEN_OUTPUT" FloatingWindowSize="250,400" />
+        </DockablePane>
+    </ResizingPanel>
+    <Hidden />
+    <Windows />
+</DockingManager>

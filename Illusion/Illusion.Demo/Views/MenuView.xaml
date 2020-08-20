@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Illusion.Demo.Views.MenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:fs="www.Caliburn.com/2011/Framework"                 
+             xmlns:fI="www.Illusion.com/2011/Framework"                      
+             mc:Ignorable="d" 
+             d:DesignHeight="25" d:DesignWidth="300">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <fI:GenericBindingConverter x:Key ="GenericBindingConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Menu Name="MainMenu" Width="Auto" Height="25" ItemsSource="{Binding Items}">
+            <Menu.ItemContainerStyle>
+                <Style TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}">
+                    <Setter Property="Icon" Value="{ImageBinding Icon}"/>
+                    <Setter Property="Header" Value="{Binding DisplayName}" />
+                    <Setter Property="IsCheckable" Value="{Binding IsCheckable}" />
+                    <Setter Property="InputGestureText" Value="{Binding Path=InputGestureText}"/>
+                    <Setter Property="IsChecked" Value="{Binding IsChecked, Mode=OneWay}" />
+                    <Setter Property="ItemsSource" Value="{Binding RelativeSource={RelativeSource Self}, Path=DataContext, Converter={StaticResource GenericBindingConverter}, ConverterParameter=IObservableParent&lt;IMenuPart&gt;.Items}" />
+                    <Setter Property="IsEnabled" Value="{Binding CanExecute}" />
+                    <Setter Property="Visibility" Value="{Binding IsVisible, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <Setter Property="Behavior.AutoMergeStyle" Value="True"/>
+                    <Setter Property="fs:Message.Attach" Value="[Event Click] = [Action Execute()]" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=IsSeparator}" 
+                               Value="True">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                                        <Separator 
+                         Style="{DynamicResource {x:Static MenuItem.SeparatorStyleKey}}"/>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Menu.ItemContainerStyle>
+        </Menu>
+    </Grid>
+
+</UserControl>

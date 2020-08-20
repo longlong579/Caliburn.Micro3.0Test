@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55E0AE37-887E-4F74-B29D-208985BC0730}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Caliburn.Micro</RootNamespace>
+    <AssemblyName>Caliburn.Micro</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caliburn.Micro\Action.cs" />
+    <Compile Include="Caliburn.Micro\ActionExecutionContext.cs" />
+    <Compile Include="Caliburn.Micro\ActionMessage.cs" />
+    <Compile Include="Caliburn.Micro\AssemblySource.cs" />
+    <Compile Include="Caliburn.Micro\AttachedCollection.cs" />
+    <Compile Include="Caliburn.Micro\Bind.cs" />
+    <Compile Include="Caliburn.Micro\BindingScope.cs" />
+    <Compile Include="Caliburn.Micro\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Caliburn.Micro\Bootstrapper.cs" />
+    <Compile Include="Caliburn.Micro\Conductor.cs" />
+    <Compile Include="Caliburn.Micro\ConductorBase.cs" />
+    <Compile Include="Caliburn.Micro\ConductorBaseWithActiveItem.cs" />
+    <Compile Include="Caliburn.Micro\ConductorWithCollectionAllActive.cs" />
+    <Compile Include="Caliburn.Micro\ConductorWithCollectionOneActive.cs" />
+    <Compile Include="Caliburn.Micro\ConventionManager.cs" />
+    <Compile Include="Caliburn.Micro\Coroutine.cs" />
+    <Compile Include="Caliburn.Micro\DefaultCloseStrategy.cs" />
+    <Compile Include="Caliburn.Micro\ElementConvention.cs" />
+    <Compile Include="Caliburn.Micro\EventAggregator.cs" />
+    <Compile Include="Caliburn.Micro\ExtensionMethods.cs" />
+    <Compile Include="Caliburn.Micro\IChild.cs" />
+    <Compile Include="Caliburn.Micro\IConductor.cs" />
+    <Compile Include="Caliburn.Micro\IHaveParameters.cs" />
+    <Compile Include="Caliburn.Micro\INPC.cs" />
+    <Compile Include="Caliburn.Micro\IoC.cs" />
+    <Compile Include="Caliburn.Micro\IResult.cs" />
+    <Compile Include="Caliburn.Micro\IScreen.cs" />
+    <Compile Include="Caliburn.Micro\IViewAware.cs" />
+    <Compile Include="Caliburn.Micro\Logging.cs" />
+    <Compile Include="Caliburn.Micro\Message.cs" />
+    <Compile Include="Caliburn.Micro\MessageBinder.cs" />
+    <Compile Include="Caliburn.Micro\Mouse.cs" />
+    <Compile Include="Caliburn.Micro\NameTransformer.cs" />
+    <Compile Include="Caliburn.Micro\Parameter.cs" />
+    <Compile Include="Caliburn.Micro\Parser.cs" />
+    <Compile Include="Caliburn.Micro\ResultCompletionEventArgs.cs" />
+    <Compile Include="Caliburn.Micro\Screen.cs" />
+    <Compile Include="Caliburn.Micro\ScreenExtensions.cs" />
+    <Compile Include="Caliburn.Micro\SequentialResult.cs" />
+    <Compile Include="Caliburn.Micro\TypeDescriptor.cs" />
+    <Compile Include="Caliburn.Micro\View.cs" />
+    <Compile Include="Caliburn.Micro\ViewAware.cs" />
+    <Compile Include="Caliburn.Micro\ViewLocator.cs" />
+    <Compile Include="Caliburn.Micro\ViewModelBinder.cs" />
+    <Compile Include="Caliburn.Micro\ViewModelLocator.cs" />
+    <Compile Include="Caliburn.Micro\WindowManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

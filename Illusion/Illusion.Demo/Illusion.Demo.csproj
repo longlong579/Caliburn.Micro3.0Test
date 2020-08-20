@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{00D07056-39F9-4650-BA8D-4805CDC5EAA0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Illusion.Demo</RootNamespace>
+    <AssemblyName>Illusion.Demo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Run\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NET</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NET</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.1.1.0\lib\Net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Options\LanguageOptionView.xaml.cs">
+      <DependentUpon>LanguageOptionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Options\LanguageOption.cs" />
+    <Compile Include="Parts\Edit\PastePart.cs" />
+    <Compile Include="Parts\Edit\CopyPart.cs" />
+    <Compile Include="Parts\Edit\CutPart.cs" />
+    <Compile Include="Parts\Edit\SeparaterPart.cs" />
+    <Compile Include="Parts\Edit\RedoPart.cs" />
+    <Compile Include="Parts\File\CloseProjectPart.cs" />
+    <Compile Include="Parts\File\SavePart.cs" />
+    <Compile Include="Parts\File\ExitPart.cs" />
+    <Compile Include="Parts\File\CreateProjectPart.cs" />
+    <Compile Include="Parts\File\FilePart.cs" />
+    <Compile Include="Parts\File\OpenProjectPart.cs" />
+    <Compile Include="Parts\Edit\UndoPart.cs" />
+    <Compile Include="Parts\Edit\EditPart.cs" />
+    <Compile Include="Parts\File\SeparaterPart.cs" />
+    <Compile Include="Parts\Help\AboutPart.cs" />
+    <Compile Include="Parts\Help\HelpPart.cs" />
+    <Compile Include="Parts\ToolBar\MainToolBarPart.cs" />
+    <Compile Include="Parts\Tools\AddInManagerPart.cs" />
+    <Compile Include="Parts\Tools\Language\ChinesePart.cs" />
+    <Compile Include="Parts\Tools\Language\LanguagePart.cs" />
+    <Compile Include="Parts\Tools\OptionPart.cs" />
+    <Compile Include="Parts\Tools\Theme\VS2010Theme.cs" />
+    <Compile Include="Parts\Tools\Theme\ThemePart.cs" />
+    <Compile Include="Parts\Tools\ToolPart.cs" />
+    <Compile Include="Parts\Tools\Language\EnglishPart.cs" />
+    <Compile Include="Parts\View\ViewPart.cs" />
+    <Compile Include="Parts\Window\CloseDocumentsPart.cs" />
+    <Compile Include="Parts\Window\ResetLayoutPart.cs" />
+    <Compile Include="Parts\Window\WindowPart.cs" />
+    <Compile Include="Resources\Resource.cs" />
+    <Compile Include="ShellViewModel.cs" />
+    <Compile Include="Parts\Tools\Theme\DafultTheme.cs" />
+    <Compile Include="Parts\Tools\Theme\ExpressionLightTheme.cs" />
+    <Compile Include="Parts\Tools\Theme\ExpressionDackTheme.cs" />
+    <Compile Include="ViewModels\DockViewModel.cs" />
+    <Compile Include="Screens\ComponentViewModel.cs" />
+    <Compile Include="Screens\DesignerViewModel.cs" />
+    <Compile Include="Screens\ProjectViewModel.cs" />
+    <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\StatusBarViewModel.cs" />
+    <Compile Include="ViewModels\ToolBarViewModel.cs" />
+    <Compile Include="Screens\ComponentView.xaml.cs">
+      <DependentUpon>ComponentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DesignerView.xaml.cs">
+      <DependentUpon>DesignerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DockView.xaml.cs">
+      <DependentUpon>DockView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuView.xaml.cs">
+      <DependentUpon>MenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ProjectView.xaml.cs">
+      <DependentUpon>ProjectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OptionsDialog.xaml.cs">
+      <DependentUpon>OptionsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StatusBarView.xaml.cs">
+      <DependentUpon>StatusBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToolBarView.xaml.cs">
+      <DependentUpon>ToolBarView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppBootstrapper.cs" />
+    <Compile Include="IShell.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Resources\ImageResource.resources" />
+    <EmbeddedResource Include="Resources\StringResource.zh-cn.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\StringResource.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Options\LanguageOptionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\ComponentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Screens\DesignerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Color_Gray.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Color_Light.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Theme_Expression.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Theme_TouchScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DockView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Screens\ProjectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OptionsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StatusBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ToolBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AvalonDock\AvalonDock.Themes\AvalonDock.Themes.csproj">
+      <Project>{3836F4A8-4B35-4F5E-BB0F-DAD374297525}</Project>
+      <Name>AvalonDock.Themes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AvalonDock\AvalonDock\AvalonDock.csproj">
+      <Project>{87E61430-4243-45F2-B74E-0A4C096CEBF3}</Project>
+      <Name>AvalonDock %28AvalonDock\AvalonDock%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Caliburn.Micro\Caliburn.Micro.csproj">
+      <Project>{55e0ae37-887e-4f74-b29d-208985bc0730}</Project>
+      <Name>Caliburn.Micro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Illusion\Illusion.csproj">
+      <Project>{D91D9068-4F4B-48D7-B728-F2C2F8B9B127}</Project>
+      <Name>Illusion</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\SaveAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Redo.png" />
+    <Resource Include="Resources\Images\Undo.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
